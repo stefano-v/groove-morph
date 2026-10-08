@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11161c">
+<title>Groove Morph — drum machine</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+<header><div><p class="eyebrow">SYNTHETIC RHYTHM LAB / 01</p><h1>Groove<span> Morph</span></h1><p class="subtitle">Quattro stili. Un groove in movimento.</p></div><span class="badge">WEB AUDIO</span></header>
+<section class="transport" aria-label="Riproduzione">
+<button id="play" class="primary">▶ Play</button><button id="stop" disabled>■ Stop</button>
+<span id="status" role="status" aria-live="polite">Pronto per suonare</span>
+<label class="tempo">BPM <input id="bpm" type="number" min="60" max="200" step="1" value="124" inputmode="numeric"></label>
+</section>
+<div class="workspace">
+<section class="morph-panel" aria-labelledby="morph-title">
+<div class="section-title"><h2 id="morph-title">Groove surface</h2><span id="style-name">Techno → Breakbeat</span></div>
+<p class="hint">↔ Stile &nbsp; ↕ Complessità · trascina il punto</p>
+<div id="pad" aria-label="Superficie XY: usa anche i cursori Stile e Complessità">
+<div class="axis top">PIÙ DETTAGLIO</div><div class="axis bottom">ESSENZIALE</div>
+<div class="pad-grid"></div><div id="puck" aria-hidden="true"></div>
+<div class="style-labels"><span>HOUSE</span><span>TECHNO</span><span>BREAKBEAT</span><span>ELECTRO</span></div>
+</div>
+<div class="sliders">
+<label>Stile / Morph <output id="morph-value">50%</output><input id="morph" type="range" min="0" max="100" value="50"></label>
+<label>Complessità <output id="complexity-value">55%</output><input id="complexity" type="range" min="0" max="100" value="55"></label>
+</div>
+</section>
+<aside>
+<section class="energy-panel"><p class="eyebrow">DYNAMICS</p><h2>Energia</h2><p class="hint">Più intensità, accenti e aperture.</p><label class="energy-control"><span class="sr-only">Energia</span><output id="energy-value">65%</output><input id="energy" type="range" min="0" max="100" value="65"></label></section>
+<section class="freeze-panel"><p class="eyebrow">HOLD THE MOMENT</p><button id="freeze" aria-pressed="false">◇ Freeze</button><p id="freeze-note" class="hint">Blocca il pattern alla prossima battuta. I cursori preparano il groove successivo.</p></section>
+<section><h2>Come si suona</h2><p class="hint">Premi Play per attivare l’audio. Le trasformazioni entrano a inizio battuta, sempre sul tempo.</p><p class="hint">Spazio: Play / Stop · F: Freeze<br>Usa cuffie o casse a volume moderato.</p></section>
+</aside>
+</div>
+<section class="sequencer" aria-labelledby="seq-title">
+<div class="section-title"><h2 id="seq-title">Il groove · 16 step</h2><span id="bar-label">In attesa</span></div>
+<div id="sequence" role="img" aria-label="Anteprima dei sei strumenti e dei sedici step"></div>
+<div class="legend"><span><i></i> Colpo</span><span>Kick / Snare / Closed hat / Open hat / Clap / Tom</span></div>
+</section>
+<footer><span>Suoni sintetizzati nel browser · nessun campione esterno</span><a href="https://github.com/stefano-v/groove-morph">Source / MIT</a></footer>
+</main>
+<script type="module" src="./app.js"></script>
+</body></html>
